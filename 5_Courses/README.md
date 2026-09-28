@@ -1,22 +1,19 @@
-# 5_Courses（精选课程与学习资源）
+# 5 · Courses & Learning Resources
 
-课程不是本仓库主线，只收录对 CitySPS 2.0 研发有较强直接价值的高质量课程、讲义和教程。
+> 课程只作为辅助资源：优先收录能直接帮助理解或实现 CitySPS 关键模块的高质量课程。
 
-## 当前收录
+## Courses
 
-### Stanford CS336 — Language Modeling from Scratch
+| Course | Institution | Focus | Links | CitySPS relevance |
+| --- | --- | --- | --- | --- |
+| **CS336 · Language Modeling from Scratch** | Stanford | 从数据、tokenization、Transformer 到训练、scaling、系统与评估 | [Course](https://cs336.stanford.edu/) · [Lectures](https://github.com/stanford-cs336/lectures) · [Notes](./Stanford%20CS336.md) | Foundation Model / LLM infrastructure / large-scale pretraining |
 
-见：[Stanford CS336.md](./Stanford%20CS336.md)
+## What belongs here
 
-主要价值：从数据、tokenization、Transformer、训练、scaling、系统和评估等角度理解现代 Foundation Model 的完整构建过程。
+课程需要满足至少一个条件：
 
-## 后续可考虑
+- 对 **Foundation Model / World Model / Agent** 的核心方法有系统讲解；
+- 包含高质量 assignment / code，可直接帮助实现 CitySPS 模块；
+- 对 distributed training、model-based RL、complex systems 等底层能力有明显补充。
 
-- Reinforcement Learning / Model-based RL
-- World Models
-- LLM Agents
-- Distributed Training
-- Urban Science / Complex Systems
-- Spatial Computing / GIScience
-
-是否正式纳入以“是否直接服务 CitySPS 研发”为准，不追求课程数量。
+不把一般性的入门课或与 CitySPS 关系较弱的资源堆进来。
