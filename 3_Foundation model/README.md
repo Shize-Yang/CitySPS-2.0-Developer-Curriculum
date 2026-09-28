@@ -1,8 +1,10 @@
-# 2 · Foundation Models
+# 3 · Foundation Models
 
 > 这一部分关注：**如何让一个模型跨数据、跨任务、跨城市/区域泛化，并形成可复用的城市表征与生成能力？**
 
 **Legend:** ⭐ = Must Read · `[Paper]` = 论文 · `[Code]` = 代码 · `[Project]` = 项目主页 · `[Data]` = 数据/权重
+
+📊 **[Comparison Matrix](./Comparison%20Matrix.md)** — 统一比较数据/模态、表示、预训练目标、backbone、任务、泛化能力与开放资源。
 
 ## Foundations
 
