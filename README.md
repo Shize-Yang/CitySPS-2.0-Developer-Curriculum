@@ -1,38 +1,47 @@
+<div align="center">
+
 # CitySPS 2.0 Handbook
 
-**CitySPS-2.0-Handbook** 是 CitySPS 2.0 研究与开发过程中的核心参考手册。
+**A curated research handbook for next-generation urban system modeling.**  
+**面向 CitySPS 2.0 的核心文献、方法与学习资源索引。**
 
-当前阶段只维护两类内容：
+[Traditional Models](./0_CitySPS1.0%20与传统模型/) · [Urban Science](./1_Urban%20Science/) · [Foundation Models](./2_Foundation%20model/) · [Agent Systems](./3_Agent%20system/) · [World Models](./4_World%20model/) · [Courses](./5_Courses/)
 
-1. **核心文献**：CitySPS 1.0 与传统城市模型、Urban Science（城市科学）、Foundation Model（基础模型）、Agent System（智能体系统）、World Model（世界模型）。
-2. **精选课程与学习资源**：仅收录对 CitySPS 2.0 方法设计和实现有直接参考价值的高质量课程，例如 Stanford CS336。
+</div>
 
-> 当前仓库不是培训课程体系，也不是 CitySPS 2.0 的正式代码仓库。它首先是一个面向长期研发的核心文献与学习资源索引。
+---
 
-## 目录
+## Contents
 
-| 模块 | 内容 |
+| Section | Focus |
 | --- | --- |
-| [0_CitySPS1.0 与传统模型](./0_CitySPS1.0%20与传统模型/) | CitySPS 相关文章、传统城市系统模型、LUTI、经典模型、综述与方法问题 |
-| [1_Urban Science](./1_Urban%20Science/) | 城市科学、复杂系统、城市增长、标度、网络、流动与城市动力学 |
-| [2_Foundation model](./2_Foundation%20model/) | 通用基础模型、城市/时空基础模型、多模态与统一表征 |
-| [3_Agent system](./3_Agent%20system/) | LLM Agent、Generative Agents、社会模拟、城市与空间 Agent |
-| [4_World model](./4_World%20model/) | World Model、latent dynamics、生成式世界模型及其城市系统迁移 |
-| [5_Courses](./5_Courses/) | CS336 等精选课程和学习材料 |
+| **[0 · CitySPS 1.0 & Traditional Models](./0_CitySPS1.0%20与传统模型/)** | CitySPS 系列工作、城市系统模型、LUTI、经典模型与模型方法论 |
+| **[1 · Urban Science](./1_Urban%20Science/)** | 城市复杂系统、标度、网络、流动、空间相互作用与城市演化 |
+| **[2 · Foundation Models](./2_Foundation%20model/)** | 城市/时空基础模型、统一表征、多模态预训练与跨任务泛化 |
+| **[3 · Agent Systems](./3_Agent%20system/)** | LLM Agent、Generative Agents、社会模拟、城市行为与规划 Agent |
+| **[4 · World Models](./4_World%20model/)** | Latent dynamics、action-conditioned prediction、imagination、planning 与城市世界模型 |
+| **[5 · Courses](./5_Courses/)** | 与 CitySPS 方法研发直接相关的高质量课程与讲义 |
 
-## 当前整理原则
+## Start Here
 
-- **少而核心**：优先收录真正影响 CitySPS 架构与方法设计的材料，而不是追求数量。
-- **保留脉络**：既保留 CitySPS 1.0、传统城市系统模型和城市科学基础，也跟踪 Foundation Model、Agent、World Model 等新范式。
-- **强调可迁移性**：非城市领域的重要方法，只要对复杂城市系统建模具有直接启发，也可以纳入。
-- **文献与课程分开**：课程只是辅助资源，不作为仓库主线。
-- **持续更新**：后续逐步补充 PDF、代码链接、项目主页和简要阅读说明。
+如果第一次进入这个仓库，可以先从下面几项了解 CitySPS 2.0 当前最重要的方法来源：
 
-## 待归档材料
+- **Urban Science** — [Urban growth and the emergent statistics of cities](https://doi.org/10.1126/sciadv.aat8812) · [Code](https://github.com/mansueto-institute/Urban-Growth-Emergent-Statistics)
+- **Spatio-temporal Foundation Model** — [UniST](https://arxiv.org/abs/2402.11838) · [Code](https://github.com/tsinghua-fib-lab/UniST)
+- **Unified Mobility / Traffic Modeling** — [BIGCity](https://arxiv.org/abs/2412.00953) · [Code](https://github.com/bigscity/BIGCity)
+- **Urban Representation** — [UrbanCLIP](https://github.com/siruzhong/WWW24-UrbanCLIP)
+- **Generative Agents / Social Simulation** — [AgentSociety 2](https://arxiv.org/abs/2607.11895) · [Code](https://github.com/fnstggl/agentsociety2)
+- **Urban Mobility Agents** — [GATSim](https://arxiv.org/abs/2506.23306) · [Code](https://github.com/qiliuchn/gatsim)
+- **World Model** — [DreamerV3: Mastering Diverse Domains through World Models](https://arxiv.org/abs/2301.04104)
+- **Model-based RL / Urban Driving** — [Think2Drive](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/6129_ECCV_2024_paper.php)
+- **From-scratch Foundation Model Engineering** — [Stanford CS336](https://cs336.stanford.edu/)
 
-现有资料中还包括：
+## Entry Format
 
-- `可供检索和参考.txt`
-- `赵老师要求.txt`
+文献页尽量采用 GitHub reading-list 常见形式，而不是文件名清单：
 
-待原始文件上传后再按实际内容归档，不在缺少正文的情况下重写或猜测其内容。
+> **Paper / System** — *Venue, Year*  
+> 一句话说明它解决什么问题、为什么值得 CitySPS 参考。  
+> `[Paper]` `[Code]` `[Project]` `[Data]`
+
+本仓库优先维护**可点击的论文、代码和项目主页索引**；本地 PDF 只是资料副本，不作为 README 的主要展示形式。
