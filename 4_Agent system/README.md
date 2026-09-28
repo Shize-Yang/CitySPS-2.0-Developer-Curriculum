@@ -1,8 +1,10 @@
-# 3 · Agent Systems
+# 4 · Agent Systems
 
 > 这一部分关注：**Agent 如何感知环境、形成记忆与目标、规划行动、调用工具，并在多主体环境中产生可信的个体行为与宏观涌现？**
 
 **Legend:** ⭐ = Must Read · `[Paper]` = 论文 · `[Code]` = 代码 · `[Project]` = 项目主页 · `[Data]` = 数据/benchmark
+
+📊 **[Comparison Matrix](./Comparison%20Matrix.md)** — 比较不同 Agent 系统的规模、架构、记忆、环境、action、校准、干预能力与开放资源。
 
 ## ⭐ Foundations: What makes an Agent?
 
@@ -57,11 +59,12 @@
 
 这些并非城市专用，但 CitySPS 的 Planning Agent 最终很可能要操作代码、数据库、GIS、模型和仿真器，因此值得作为 engineering reference：
 
+- **[nanobot](https://github.com/HKUDS/nanobot)** — 小而完整的 Agent runtime，适合直接阅读 tools、memory、MCP、subagents 和 automation 的工程实现。
 - **SWE / coding agents** — 研究 LLM 如何在真实软件环境中观察、编辑、执行、验证，而不是只生成文本。
 - **Browser / computer-use agents** — 对未来 CitySPS 自动检索政策材料、调用网页数据和规划系统有参考价值。
 - **Scientific agents** — 对自动形成假设、运行实验、分析结果和迭代模型有参考价值。
 
-这里暂不追求完整收录；只有当其控制循环、工具接口或评估方式能迁移到 CitySPS 时再纳入核心列表。
+更多适合直接跑和读代码的项目见 **[Learning Resources / Hands-on Projects](../6_Learning%20Resources/Hands-on%20Projects.md)**。
 
 ## Agent architecture checklist for CitySPS
 
