@@ -17,6 +17,17 @@
 | ⭐ **HARMONY Model Suite** | PLOS ONE, 2025 | 把人口、区域经济、LUTI、货运和网络仿真组织成模块化战略—战术—运行三级模型，是“城市模型系统工程”很好的近期样本。 | [Paper](https://doi.org/10.1371/journal.pone.0330067) · [Project](https://harmony-h2020.eu/model-suite/) · [Docs](https://github.com/MobyX-HARMONY/HARMONY-Platform-Documentation/wiki/Component-Documentation) |
 | **CityScope** | MIT Media Lab | 不是传统预测模型，而是把城市模型、实时交互、情景设计与公众/规划师决策连接起来；对 CitySPS 的 intervention interface 与 human-in-the-loop 很重要。 | [Project](https://cityscope.media.mit.edu/) · [Code](https://github.com/CityScope) · [Architecture](https://cityscope.media.mit.edu/intro/system/) |
 
+## Open-source Operational Systems
+
+这些系统值得不仅“读论文”，还直接阅读代码结构、数据接口、配置方式和运行流程。
+
+| System | What it does | Why inspect the code | Resources |
+| --- | --- | --- | --- |
+| ⭐ **ActivitySim** | Open-source activity-based travel demand microsimulation | Python 化、配置驱动、可部署的 activity-based modeling 工程范例；适合参考 CitySPS 行为模型的数据管线与模块接口。 | [Code](https://github.com/ActivitySim/activitysim) · [Docs](https://activitysim.github.io/) |
+| ⭐ **POLARIS** | Integrated travel demand + dynamic traffic assignment + operations simulation | 在一个高性能平台中同时建模 activity generation、destination/mode/route choice、freight、transit 与网络运行，是 CitySPS 交通模块的重要竞品/参考系统。 | [Paper](https://doi.org/10.1016/j.trc.2015.07.017) · [Docs](https://polaris.taps.anl.gov/) |
+| **BEAM** | Behavior, Energy, Autonomy & Mobility | 基于 MATSim 扩展 within-day agent simulation，并把 mode choice、ride-hailing、能源/排放等纳入系统；对行为—交通—能源联动很有价值。 | [Paper](https://arxiv.org/abs/2308.02073) · [Code](https://github.com/LBNL-UCB-STI/beam) · [Project](https://transportation.lbl.gov/beam/) |
+| **BISTRO** | Simulation + optimization for transportation interventions | 在 BEAM 上增加 intervention optimization，和 CitySPS “方案生成—仿真—评价—优化”闭环高度相关。 | [Code](https://github.com/bistro-its-berkeley/BISTRO) |
+
 ## Recommended Reading
 
 | Work | Focus | Resources |
