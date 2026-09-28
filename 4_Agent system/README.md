@@ -18,6 +18,14 @@
 | **Voyager: An Open-Ended Embodied Agent with Large Language Models** | 2023 | 通过自动课程、技能库与迭代提示实现长期能力积累；对应城市 Agent 的 skill / policy library 思路。 | [Paper](https://arxiv.org/abs/2305.16291) · [Project](https://voyager.minedojo.org/) |
 | ⭐ **AgentBench: Evaluating LLMs as Agents** | ICLR 2024 | 多环境 agent benchmark，提醒 CitySPS Agent 不能只做 demo，而需要可重复、可比较的任务级评估。 | [Paper](https://arxiv.org/abs/2308.03688) · [Code + Data](https://github.com/THUDM/AgentBench) |
 
+## ⭐ Urban Generative Intelligence / Grounded City Agents
+
+| Work | Venue / Year | Why it matters for CitySPS | Resources |
+| --- | --- | --- | --- |
+| ⭐ **Towards a foundational platform for generative agents in simulated city environment** | PLOS Complex Systems, 2026 | 提出 Urban Generative Intelligence (UGI) 平台：以 **city simulator + UrbanKG + standard natural-language interface** 作为开放数字基础设施，再接入 CityGPT / UrbanGPT 等城市 foundation model 与 generative agents。Agent 具有 memory / persona / preference，并通过 perceive / act / communicate 与城市环境交互。这个结构与 CitySPS 2.0 的“真实城市底座 + Agent + 专业模拟器/知识 + 反馈闭环”高度相关。 | [Paper](https://doi.org/10.1371/journal.pcsy.0000093) |
+
+这篇工作的一个关键启发不是“再做一个 LLM Agent”，而是把 **LLM 的灵活认知** 与 **城市模拟器/知识图谱的可靠计算** 分开，再用标准语言/工具接口连接。CitySPS 可以进一步把这种接口扩展到 routing、LUTI、mobility model、World Model、policy engine 与 GIS tools。
+
 ## ⭐ Large-scale Social Simulation
 
 | Work | Year | Why it matters for CitySPS | Resources |
@@ -51,6 +59,9 @@
 | **PlanGPT: Enhancing Urban Planning with Tailored Language Model and Efficient Retrieval** | 2024–2025 | 面向城市规划领域的专门模型、检索与 agent framework，连接专业规划知识、文档和工具调用。 | [Paper](https://arxiv.org/abs/2402.19273) · [Project](https://plangpt.github.io/) |
 
 ## Methodological Critiques & Validation
+
+- ⭐ **[AI agent behavioral science](https://doi.org/10.1057/s41599-026-07316-7)** — *Humanities & Social Sciences Communications, 2026*  
+  一个非常重要的评价视角：Agent 不是静态模型能力的简单外显，而是在环境、社会线索、历史互动和反馈中形成的**情境化行为实体**。论文提出从 individual agent、multi-agent 与 human-agent interaction 三层系统观察、干预和解释行为，并把 fairness、safety、interpretability、accountability、privacy 也视为行为属性。对 CitySPS 来说，这意味着 Agent evaluation 应从“任务完成率”升级为 **behavioral science + intervention study**。
 
 - ⭐ **[Integrating LLM in Agent-Based Social Simulation: Opportunities and Challenges](https://arxiv.org/abs/2507.19364)** — *2025*  
   这类批判性工作对 CitySPS 很重要：LLM agents 具有表达力，但同时存在 grounding、行为一致性、偏差、校准和复现问题；作者特别强调将 LLM 与传统 ABM 混合，而不是完全替代机制模型。
@@ -92,6 +103,7 @@ CitySPS 中的 generative agent 至少需要同时通过：
 2. **Population-level validation** — OD、流量、活动密度、访问频率等群体分布是否正确；
 3. **Mechanism validation** — 对距离、时间、价格、收入、可达性和政策变化的响应方向是否合理；
 4. **Counterfactual validation** — 已发生政策/冲击事件能否被 historical backtesting 重现；
-5. **Stability / sensitivity** — 更换 LLM、prompt、temperature 后宏观结果是否稳定。
+5. **Stability / sensitivity** — 更换 LLM、prompt、temperature 后宏观结果是否稳定；
+6. **Behavioral intervention validation** — 改变角色、激励、信息、伙伴或环境约束后，行为如何变化，是否可由理论解释并跨情境泛化。
 
 这也是 CitySPS 与一般“LLM 社会模拟 demo”需要拉开的关键距离。
