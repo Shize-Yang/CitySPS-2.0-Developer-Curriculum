@@ -6,6 +6,16 @@
 
 📊 **[Comparison Matrix](./Comparison%20Matrix.md)** — 比较 state、action conditioning、dynamics/output、planning、horizon、uncertainty 与开放资源。
 
+## ⭐ Survey & Tutorial Entry Points
+
+- ⭐ **[Understanding World or Predicting Future? A Comprehensive Survey of World Models](https://arxiv.org/abs/2411.14499)** — *ACM Computing Surveys / arXiv v4, 2025*  
+  非常适合作为本模块总入口。它把 World Model 的核心功能分成两条：**理解世界（internal representation / world knowledge）** 与 **预测未来（future prediction / simulation）**，并进一步覆盖 model-based RL、LLM/MLLM、video generation、interactive 3D environments，以及 games、robotics、autonomous driving、urban systems 与 social simulacra。  
+  [Living List / Code Index](https://github.com/tsinghua-fib-lab/World-Model)
+
+- ⭐ **《从理解世界到推演城市：连接物理与社会的世界模型》** — *冯杰，中关村学院，Tutorial, 2026-09-18*  
+  一份很适合 CitySPS 的系统教程：从“状态与观测”出发，依次组织 **理解世界 → 预测世界 → 应用与验证 → 城市世界模型 → 社会具身智能**。其中城市部分将研究结构拆为 **城市认知、行为动力学、交互环境、任务验证** 四块，这个划分与 CitySPS 2.0 当前模块设计高度一致。  
+  [Author](https://vonfeng.github.io/) · [Learning Resources](../6_Learning%20Resources/Tutorials%20&%20Talks.md)
+
 ## ⭐ Foundations: Learned Dynamics in Latent Space
 
 | Work | Venue / Year | Why it matters for CitySPS | Resources |
@@ -50,6 +60,16 @@ JEPA 路线和 Dreamer / video-generation 路线非常不同：它不要求重�
 | ⭐ **DIAMOND: Diffusion for World Modeling — Visual Details Matter in Atari** | NeurIPS 2024 Spotlight | diffusion model 直接作为交互环境 dynamics；展示生成质量和 control performance 可以共同优化。 | [Paper](https://arxiv.org/abs/2405.12399) · [Code](https://github.com/eloialonso/diamond) · [Project](https://diamond-wm.github.io/) |
 | **GameNGen: Diffusion Models Are Real-Time Game Engines** | 2024 | action-conditioned diffusion 在实时交互循环中直接生成下一世界状态，是生成模型作为 simulator 的极端案例。 | [Paper](https://arxiv.org/abs/2408.14837) · [Project](https://gamengen.github.io/) |
 
+## ⭐ Urban / 3D Embodied Environments
+
+这类工作主要解决“**城市空间如何成为可运行、可交互的环境**”，与“城市社会经济状态的长期 dynamics”不是一回事，但它们是 Physical / Embodied CitySPS 不可忽视的一支。
+
+- ⭐ **[UrbanWorld2.0: A Multimodal Agentic Framework for Reality-Aligned 3D World Generation at City-Scale](https://arxiv.org/abs/2511.18005)** — *ACM Multimedia 2026*  
+  以 agentic orchestration 组织 geospatial retrieval、street-view curation、perception、visual imagination、reflection、3D generation 与 scene design；Agent 负责 task decomposition、tool calling、quality critic 与 iterative self-refinement，并用 OSM / street view 等真实数据约束 3D layout。它的价值在于 **reality alignment + modular tool orchestration + scalable 3D environment construction**，而不是长期社会经济预测。  
+  [Paper / DOI](https://doi.org/10.1145/3767308.3836009)
+
+这篇工作对 CitySPS 的直接启发是：**“World Model”可以包含至少两种不同层次**——一类学习城市状态随 action / shock 的动态演化；另一类构造可交互、可执行、与真实地理对齐的 physical environment。两者最终可以连接，但评价指标与建模目标不能混淆。
+
 ## Autonomous Driving / Physical AI
 
 这些工作与城市系统比游戏 world model 更接近，因为它们要处理真实空间、交通主体、动作条件和安全关键 planning。
@@ -81,6 +101,12 @@ Urban state z_t
      evaluation / planning / optimization
 ```
 
+冯杰的 2026 Tutorial 给出了一个很适合与上式并行保留的“能力视角”：
+
+**城市认知（多源证据 → 空间与社会状态） → 行为动力学（空间与需求 → 活动/轨迹/流） → 交互环境（地图/图像 → 可运行三维世界） → 任务验证（场景操作 → 可观测行动结果）**。
+
+这提醒我们：CitySPS 的 Urban World Model 不应只等价于一个 `W(z_t, a_t) → z_{t+1}` 网络，而应与 **state understanding、behavior、interactive environment、validation** 共同组成可推演城市系统。
+
 ### Three world-model routes CitySPS should compare
 
 | Route | Representative work | Strength | Main risk for CitySPS |
@@ -88,6 +114,7 @@ Urban state z_t
 | **Latent dynamics + imagination** | Dreamer / TD-MPC2 | Efficient rollout、planning、control | latent state 可能忽略长期社会结构和制度变量 |
 | **Predictive representation / JEPA** | V-JEPA 2 | 不重建无关细节，强调 abstract predictable state | 如何定义“对城市决策真正有用”的 target representation 仍是核心难题 |
 | **Generative world simulation** | Genie / UniSim / DIAMOND / Cosmos | 多模态、可观察、可交互未来生成 | 容易把视觉逼真误当成城市机制正确 |
+| **Reality-aligned 3D environment** | UrbanWorld2.0 | 可运行城市空间、真实地理对齐、CG-compatible | 它解决的是 environment construction，不直接等价于 action-conditioned urban dynamics |
 
 ### What CitySPS should borrow
 
@@ -99,16 +126,18 @@ Urban state z_t
 | **Model predictive planning** | 多个备选规划方案在线 rollout → 评估 → 重新规划 |
 | **Task-relevant state** | 不要求预测全部城市细节，而优先保留对决策和评价有用的信息 |
 | **Generative modeling** | 对多模态未来状态和多种可能未来建模，而不是单点预测 |
+| **Reality-aligned environment** | 用 GIS / OSM / street view / 3D assets 构造与真实城市一致、可供 embodied agent 交互的物理环境 |
 | **World-model pretraining** | 在多城市、多年份、多事件数据上学习通用城市动态，再适配本地城市 |
 
 ### What CitySPS should **not** copy blindly
 
 1. **Video ≠ Urban State**：城市不是 RGB frame sequence，核心状态包括人口、网络、制度、土地、价格、政策、行为和不可见 latent processes。
-2. **Action ≠ joystick**：城市 action 往往高维、组合式、延迟生效并带制度约束。
-3. **Long horizon matters more**：游戏/驾驶常关注秒—分钟，城市政策通常跨月—年，error accumulation 与 structural change 更严重。
-4. **Counterfactual ≠ forecast**：政策模拟要求回答“如果实施了一个现实中未实施的方案会怎样”，需要更强的因果识别、机制约束和不确定性表达。
-5. **Multi-agent feedback**：人口与企业会对政策和彼此反应，world dynamics 不能把 human behavior 当作固定背景。
-6. **Validation must be historical and structural**：不仅比较下一时刻误差，还要验证长期分布、城市规律、历史政策冲击和跨城市迁移。
+2. **3D city ≠ Urban dynamics**：几何与视觉上的 reality alignment 很重要，但不能代替人口、经济、土地、交通和政策反馈的动态建模。
+3. **Action ≠ joystick**：城市 action 往往高维、组合式、延迟生效并带制度约束。
+4. **Long horizon matters more**：游戏/驾驶常关注秒—分钟，城市政策通常跨月—年，error accumulation 与 structural change 更严重。
+5. **Counterfactual ≠ forecast**：政策模拟要求回答“如果实施了一个现实中未实施的方案会怎样”，需要更强的因果识别、机制约束和不确定性表达。
+6. **Multi-agent feedback**：人口与企业会对政策和彼此反应，world dynamics 不能把 human behavior 当作固定背景。
+7. **Validation must be historical and structural**：不仅比较下一时刻误差，还要验证长期分布、城市规律、历史政策冲击和跨城市迁移。
 
 ## Core evaluation dimensions
 
@@ -122,10 +151,11 @@ Urban state z_t
 | **Uncertainty / multimodality** | 对同一政策是否能表达多个合理未来，而不是伪确定性？ |
 | **Counterfactual validity** | 能否重现已发生政策事件，并可信外推到未观察 action？ |
 | **Cross-city transfer** | 在未见城市、不同规模/制度/形态下是否仍保持有效？ |
+| **Physical alignment** | 若包含 3D / embodied environment，空间布局、道路、对象与真实 GIS 是否一致？ |
 | **Decision usefulness** | world model 提升了 policy ranking / optimization，还是只提升预测指标？ |
 
 ## CitySPS target
 
 最终希望得到的不是单纯“城市预测模型”，而是一个可以被 Agent 和 Planner 调用的动态环境：
 
-> **Urban World Model = 可学习、可推演、可干预、可验证、可用于规划决策的城市动态模型。**
+> **Urban World Model = 可学习、可推演、可干预、可验证、可用于规划决策的城市动态模型；在需要具身交互时，还应连接 reality-aligned physical environment。**
