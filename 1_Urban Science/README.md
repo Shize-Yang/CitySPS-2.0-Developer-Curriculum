@@ -1,20 +1,26 @@
-# 1_Urban Science（城市科学）
+# 1 · Urban Science
 
-这一部分整理支撑 CitySPS 2.0 的城市科学理论与经验规律。重点不是传统模型本身，而是回答：**城市系统中有哪些稳定结构、规律、机制和动力过程值得被模型学习与检验？**
+> 城市科学为 CitySPS 提供“模型应该学习和解释什么”的理论约束：城市的结构、规律、机制、流动与长期演化。
 
-## 当前文献
+## Core Reading
 
-- Urban growth and the emergent statistics of cities.pdf
+- ⭐ **[Urban growth and the emergent statistics of cities](https://doi.org/10.1126/sciadv.aat8812)** — *Luis M. A. Bettencourt, Science Advances, 2020*  
+  将城市增长、统计分布与标度规律放到统一的动态框架中讨论，是从“静态城市规律”走向“城市动态系统”的重要参考。  
+  `[Paper]` · [Code](https://github.com/mansueto-institute/Urban-Growth-Emergent-Statistics)
 
-## 后续重点方向
+## Research Map
 
-- Urban scaling（城市标度）
-- Urban complexity（城市复杂性）
-- Spatial interaction（空间相互作用）
-- Networks and flows（网络与流）
-- Human mobility（人群移动）
-- Land use and accessibility（土地利用与可达性）
-- Urban growth and evolution（城市增长与演化）
-- Agglomeration and segregation（集聚与分异）
+| Topic | Question for CitySPS |
+| --- | --- |
+| **Urban Scaling** | 哪些城市指标随人口/规模呈稳定标度关系？这些规律能否成为 world model 的约束或评估指标？ |
+| **Urban Complexity** | 如何描述城市的涌现、异质性、非线性与多尺度耦合？ |
+| **Spatial Interaction** | 人口、机会、设施与区域之间的相互作用如何产生流？ |
+| **Networks & Flows** | 路网、功能联系与人口流动的结构怎样影响城市系统状态？ |
+| **Human Mobility** | 个体轨迹、OD 与群体流之间有哪些可迁移的统计规律和机制？ |
+| **Land Use & Accessibility** | 土地利用、设施布局与可达性如何共同塑造活动与发展？ |
+| **Urban Growth & Evolution** | 城市如何从当前状态演化到下一状态？增长、衰退与结构变化如何刻画？ |
+| **Agglomeration & Segregation** | 集聚、分异、不平等与空间组织如何形成并持续？ |
 
-后续文献应优先选择能够为 CitySPS 的状态定义、行为机制、动力学、干预和验证提供理论约束的工作。
+## Reading lens
+
+这一部分的文献优先记录：**规律是什么 → 机制是什么 → 可观测变量是什么 → 能否被模拟 → 能否用于验证 CitySPS**。
