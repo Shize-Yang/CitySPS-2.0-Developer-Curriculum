@@ -14,6 +14,7 @@
 | **UniSim** | multimodal visual world representation | language / action / visual conditions | conditional future world generation | interactive simulation | short–medium | generative | ✅ Project | 多模态 condition → future state；可启发遥感/街景/文本干预条件化 |
 | **DIAMOND** | pixel/video representation | environment action | diffusion next-state generation | policy learning inside model | multi-step | diffusion distribution | ✅ Code | diffusion 作为 simulator；帮助理解高保真生成和控制如何结合 |
 | **Cosmos** | video / physical-world latent or tokens | text / trajectory / action conditioning | world generation / prediction | Physical AI training / evaluation | varying | generative | ✅ Models / platform | 大规模 Physical AI world foundation model 的系统工程与数据路线 |
+| **UrbanWorld2.0** | GIS/OSM + street view + multimodal intermediate representations + mesh-based 3D world | not a temporal policy-action model; agent controls generation workflow | reality-aligned city-scale 3D environment generation | task decomposition + tool calling + reflection / quality critic | environment construction rather than temporal rollout | quality/reality alignment rather than predictive uncertainty | Paper; authors report open-source code/assets | 重要的“可交互物理城市环境”路线：支持 embodied agents，但应与社会经济 urban dynamics model 区分 |
 | **GAIA-1** | driving video tokens | vehicle action / context | generative driving future | simulation / scenario generation | multi-step | generative | Paper / demos | 自动驾驶世界模型：现实动态、action condition、场景生成的城市相邻案例 |
 | **Think2Drive** | compact latent driving state | driving control | latent dynamics | RL / planner in learned simulator | long control sequences | model-dependent | Paper | “真实复杂系统 + learned simulator + planner”的直接案例 |
 
@@ -27,4 +28,5 @@
 4. **Exogenous shocks**：天气、灾害、疫情、重大活动、宏观经济变化需要与人为 intervention 分开建模。
 5. **Counterfactual validity**：预测 `future under observed policy` 与推演 `future under unseen policy` 不是同一任务。
 6. **Uncertainty & causal validity**：需要输出政策效果置信度、OOD 风险，并和纯相关预测区分。
-7. **Multi-level validation**：同时检查变量预测误差、长期结构、城市科学规律和历史政策 backtesting。
+7. **Physical environment vs. system dynamics**：UrbanWorld2.0 一类工作解决 reality-aligned 3D environment；CitySPS 还需要人口、土地、交通、经济与行为状态的 action-conditioned dynamics，两者应连接但不能混为一谈。
+8. **Multi-level validation**：同时检查变量预测误差、长期结构、城市科学规律和历史政策 backtesting。
