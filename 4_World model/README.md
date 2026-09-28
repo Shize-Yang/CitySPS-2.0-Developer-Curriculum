@@ -21,6 +21,22 @@
 | ⭐ **MuZero: Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model** | Nature, 2020 | 不要求显式重构完整环境，只学习对 planning 有用的 representation、reward 和 dynamics；提醒 CitySPS world model 不一定必须预测所有城市变量。 | [Paper](https://www.nature.com/articles/s41586-020-03051-4) |
 | ⭐ **TD-MPC2: Scalable, Robust World Models for Continuous Control** | ICLR 2024 | 将 latent dynamics 与 model predictive control 结合，并强调规模化、robustness 与多任务控制。对政策 action optimization 很有参考价值。 | [Paper](https://arxiv.org/abs/2310.16828) · [Code](https://github.com/nicklashansen/tdmpc2) · [Project + Models](https://www.tdmpc2.com/) |
 
+## ⭐ Predictive Representation / JEPA Route
+
+JEPA 路线和 Dreamer / video-generation 路线非常不同：它不要求重建每一个可见细节，而是在 representation space 中预测“真正有意义、可预测的未来”。这对高度异构、噪声大且长时程的城市系统尤其值得关注。
+
+- ⭐ **A Path Towards Autonomous Machine Intelligence** — *Yann LeCun, 2022*  
+  提出以 world model、latent-variable energy-based model、JEPA、planning 等为核心的自主智能架构愿景。对于 CitySPS 的价值是：**未来状态不一定要逐像素/逐变量重建，可以在抽象 latent space 中预测对决策有用的信息。**  
+  [Paper](https://openreview.net/forum?id=BZ5a1r-kVsf)
+
+- ⭐ **[V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985)** — *Meta FAIR, 2025*  
+  用大规模互联网视频预训练 predictive representation，再以少量 action-conditioned robot data 构建 V-JEPA 2-AC world model，实现理解、预测和规划。对 CitySPS 很有启发：**先学习通用城市状态表征，再用有限干预/政策数据学习 action-conditioned dynamics。**  
+  [Code + Models](https://github.com/facebookresearch/vjepa2) · [Project](https://ai.meta.com/research/vjepa/)
+
+- **V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning** — *2026*  
+  在 JEPA 预训练中进一步加入 dense predictive loss、deep self-supervision 与多模态 tokenizer，并展示 data/model scaling。对 CitySPS 的 dense spatial representation 与 multi-scale urban feature learning 也值得跟踪。  
+  [Paper](https://arxiv.org/abs/2603.14482) · [Code](https://github.com/facebookresearch/vjepa2)
+
 ## ⭐ Generative / Interactive World Models
 
 这条路线不再只学习 compact latent dynamics，而是直接生成可观察世界的未来状态。CitySPS 需要理解它，但不能简单照搬“video world model”。
@@ -62,6 +78,14 @@ Urban state z_t
                     ↓
      evaluation / planning / optimization
 ```
+
+### Three world-model routes CitySPS should compare
+
+| Route | Representative work | Strength | Main risk for CitySPS |
+| --- | --- | --- | --- |
+| **Latent dynamics + imagination** | Dreamer / TD-MPC2 | Efficient rollout、planning、control | latent state 可能忽略长期社会结构和制度变量 |
+| **Predictive representation / JEPA** | V-JEPA 2 | 不重建无关细节，强调 abstract predictable state | 如何定义“对城市决策真正有用”的 target representation 仍是核心难题 |
+| **Generative world simulation** | Genie / UniSim / DIAMOND / Cosmos | 多模态、可观察、可交互未来生成 | 容易把视觉逼真误当成城市机制正确 |
 
 ### What CitySPS should borrow
 
