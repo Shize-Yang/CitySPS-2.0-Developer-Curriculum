@@ -23,6 +23,16 @@
 | ⭐ **Diffusion Transformers as Open-World Spatiotemporal Foundation Models (UrbanDiT)** | arXiv 2024 | 用 Diffusion Transformer 统一多类时空输入/输出和 open-world 任务，是“预测 + 生成 + 多任务统一”路线的重要参考。 | [Paper](https://arxiv.org/abs/2411.12164) · [Code](https://github.com/tsinghua-fib-lab/UrbanDiT) |
 | ⭐ **UrbanFM: Scaling Urban Spatio-Temporal Foundation Models** | arXiv 2026 | 进一步把 urban FM 推到 scaling 问题：大规模 WorldST 预训练语料与 EvalST 评估体系对 CitySPS 未来数据规模、benchmark 和 scaling law 都很重要。 | [Paper](https://arxiv.org/abs/2602.20677) |
 
+## Geospatial / Earth Observation Foundation Models
+
+CitySPS 的 Urban State 不会只有 OD 与时间序列。遥感、土地覆盖、建筑、环境和空间上下文都需要进入统一表征，因此 Earth Observation FM 是非常重要的相邻路线。
+
+| Work | Venue / Year | Why it matters for CitySPS | Resources |
+| --- | --- | --- | --- |
+| ⭐ **Prithvi-EO-2.0** | IBM + NASA, 2024– | 300M / 600M 开源 EO foundation model，将时间和地理位置 metadata 直接编码进模型；是“spatial + temporal metadata-aware pretraining”的直接样板。 | [Code](https://github.com/NASA-IMPACT/Prithvi-EO-2.0) · [300M](https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M) · [600M](https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-600M) |
+| ⭐ **TerraMind: Large-Scale Generative Multimodality for Earth Observation** | ICCV 2025 | any-to-any generative multimodal EO foundation model，在多种空间模态间做理解和生成；对 CitySPS 多模态缺失补全与跨模态生成尤其重要。 | [Paper](https://arxiv.org/abs/2504.11171) · [Code](https://github.com/IBM/terramind) |
+| **Clay Foundation Model** | Open-source EO FM | 面向 Sentinel-1/2、DEM 等地球观测输入的开放 embedding / MAE 模型，适合参考 geospatial encoder、metadata 与开源训练基础设施。 | [Code](https://github.com/Clay-foundation/model) · [Project](https://clay-foundation.github.io/model/) |
+
 ## General Time-series Foundation Models
 
 这些工作并非城市专用，但在 **统一时间序列 tokenization、patching、pretraining objective、zero-shot forecasting、长上下文与大规模预训练** 上非常值得借鉴。
