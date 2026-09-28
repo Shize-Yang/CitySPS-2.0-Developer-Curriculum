@@ -1,8 +1,10 @@
-# 1 · Urban Science
+# 2 · Urban Science
 
 > 城市科学回答的是：**CitySPS 应该学习、解释和检验哪些真实城市规律？** 这一部分优先收录能够为城市状态、行为机制、空间交互、动力学与验证提供理论约束的工作。
 
 **Legend:** ⭐ = Must Read · `[Paper]` = 论文 · `[Code]` = 代码 · `[Data]` = 数据 · `[Project]` = 项目主页
+
+📊 **[Comparison Matrix](./Comparison%20Matrix.md)** — 比较不同城市科学理论的尺度、变量、机制及其如何进入 CitySPS 约束与验证。
 
 ## ⭐ Must Read
 
