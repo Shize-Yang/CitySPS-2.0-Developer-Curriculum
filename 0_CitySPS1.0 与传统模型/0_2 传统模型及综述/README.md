@@ -1,56 +1,67 @@
-# 0_2 传统模型及综述
+# 0_2 · Traditional Urban Models & Reviews
 
-这一部分保存传统城市系统模型、交通—土地利用一体化模型、经典模型、综述、模型方法问题及相关学位论文。
+传统城市系统模型是 CitySPS 2.0 的重要方法基础。这里按**研究问题与模型谱系**组织，而不是按本地文件名排列。
 
-> 下列条目来自当前已有文献清单；PDF/文档本体后续逐步上传并保持原文件名。
+## Surveys & Perspectives
 
-## 中国城市系统模型与综合研究
+### 中文核心材料
 
-- 城市交通与土地利用一体化模型的核心算法进展及技术创新.pdf
-- 城市交通与土地利用一体化的理论基础与发展趋势.pdf
-- 城市复杂系统空间演进模拟方法研究进展_赵鹏军.pdf
-- 城市数字孪生模型进展及物理-社会-信息-时间(PSIT)四维耦合框架.pdf
-- 城市生命体复杂系统模型的设计、开发与应用_赵东一.pdf
-- 城市系统交通需求模拟预测技术框架构建及应用.pdf
-- 城市系统模型的研究进展与展望_赵鹏军.pdf
-- 大数据城市通勤交通模型的构建与模拟应用_刘云舒.pdf
+- **城市系统模型的研究进展与展望** — 赵鹏军  
+  城市系统模型的总体发展脉络，是理解 CitySPS 与传统 integrated urban model 关系的核心入口。
+- **城市复杂系统空间演进模拟方法研究进展** — 赵鹏军  
+  关注城市复杂系统的空间演进、模拟范式与方法基础。
+- **城市交通与土地利用一体化的理论基础与发展趋势**  
+  LUTI（Land-use and Transport Interaction）理论与模型发展的系统入口。
+- **城市交通与土地利用一体化模型的核心算法进展及技术创新**  
+  聚焦 LUTI 的算法结构与技术演化。
+- **国外应用城市模型发展回顾与新型空间政策模型综述** — 万励  
+  关注应用型城市模型与空间政策模拟。
+- **城市发展的模拟与预测——研究进展、发展挑战与未来展望** — 杨天人  
+  城市模拟与预测研究的综合性回顾。
+- **城市模型的回顾与展望——访谈麦克·巴蒂之后的新思考** — 刘伦  
+  从城市模型思想史与方法演进角度理解 contemporary urban modelling。
+- **城市模型研究展望** — 龙瀛
+- **城市数字孪生模型进展及物理-社会-信息-时间（PSIT）四维耦合框架**
+- **城市生命体复杂系统模型的设计、开发与应用** — 赵东一
 
-## 专项方法问题
+### International reviews & handbooks
 
-- 【专项问题】2013均衡性与动态性.pdf
-- 【专项问题】2014校准与验证综述.pdf
+- **The Future of Urban Modelling** — 城市模型未来方向与新数据/新计算范式。
+- **Urban Models: Progress and Perspective** — 城市模型发展综述。
+- **Urban Growth Models: Progress and Perspective** — 城市增长模型综述。
+- **Urban Modeling (MB2009)** — Michael Batty 相关城市建模材料。
+- **Land-use / Transport Model Review (Elisabete, 2015)** — LUTI 模型比较与综述。
+- **CORE 2016 Workshop Materials** — 城市模型研究讨论与前沿议题。
 
-## 古老经典 / Handbook
+## Canonical Integrated Urban Models
 
-- 【古老经典】大模型的安魂曲.pdf
-- 【古老经典】模型总结handbook.pdf
+| Model / System | Main idea | Why it matters for CitySPS |
+| --- | --- | --- |
+| **UrbanSim** | 基于主体/微观模拟的土地利用与城市发展建模 | 提供 household / job / developer / land-use 等主体与城市状态交互的经典实现 |
+| **ILUTE** | Integrated Land Use, Transportation, Environment | 展示大规模综合城市微观模拟如何组织人口、活动、交通与长期演化 |
+| **QUANT** | Very large-scale urban modelling | 展示大尺度空间交互与城市系统模拟的可扩展框架 |
+| **CityScope** | Data-driven urban simulation / decision support | 连接模型、交互式规划与城市决策支持 |
+| **HARMONY** | Integrated urban modelling | 作为近年综合城市系统建模的重要比较对象 |
 
-## 经典模型
+## Transport & Mobility Modeling
 
-- 【经典模型】ILUTE.pdf
-- 【经典模型】UrbanSim-JAPA.pdf
+- **城市系统交通需求模拟预测技术框架构建及应用** — 城市尺度交通需求模拟框架。
+- **大数据城市通勤交通模型的构建与模拟应用** — 刘云舒；从传统调查模型向大数据驱动通勤模拟延伸。
 
-## 综述
+## Calibration, Validation & Dynamics
 
-- 【综述】core2016研讨会.pdf
-- 【综述】Elisabete2015土地交通模型综述.pdf
-- 【综述】MB2009Urban_Modeling.pdf
-- 【综述】The Future of Urban Modelling.pdf
-- 【综述】Urban growth models progress and perspective.pdf
-- 【综述】Urban models Progress and perspective.pdf
-- 【综述】国外应用城市模型发展回顾与新型空间政策模型综述_万励.pdf
-- 【综述】城市发展的模拟与预测——研究进展、发展挑战与未来展望_杨天人.pdf
-- 【综述】城市模型的回顾与展望——访谈麦克·巴蒂之后的新思考_刘伦.pdf
-- 【综述】城市模型研究展望_龙瀛.pdf
-- 【综述】宫老师文章.pdf
+- **均衡性与动态性（2013）** — 静态均衡与动态城市过程之间的建模取舍。
+- **校准与验证综述（2014）** — 城市模型 calibration / validation 的方法问题。
 
-## 近年模型
+## Background Materials
 
-- 【近年模型】CityScope.pdf
-- 【近年模型】HARMONY.pdf
-- 【近年模型】QUANT-A new framework for very large-scale urban modelling.pdf
+- **模型总结 Handbook** — 传统城市模型的总体整理材料。
+- **大模型的安魂曲** — 早期关于大型城市模型局限与反思的经典材料。
+- **宫兆亚博士论文** — 综合城市模型相关学位论文。
+- **城市系统模型的研究进展与展望：补充材料** — 与综述配套的扩展材料。
 
-## 学位论文与补充材料
+---
 
-- 宫兆亚博士论文.pdf
-- 补充材料-城市系统模型的研究进展与展望.docx
+### Reading lens
+
+对传统模型的阅读统一关注六个维度：`State` · `Actor` · `Dynamics` · `Interaction` · `Intervention` · `Validation`。后续补充公开版本时，将在条目后增加 `[Paper]` `[Code]` `[Project]` 链接。
