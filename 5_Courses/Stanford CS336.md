@@ -1,28 +1,29 @@
-# Stanford CS336: Language Modeling from Scratch
+# Stanford CS336 · Language Modeling from Scratch
 
-## 定位
+**Stanford University · Spring 2026**  
+[Course Website](https://cs336.stanford.edu/) · [Lecture Materials](https://github.com/stanford-cs336/lectures)
 
-Stanford CS336 是一门围绕“从零构建语言模型”展开的课程。对于 CitySPS，它的价值不在于学习如何调用现成 LLM，而在于理解 Foundation Model 从数据、表示、模型、训练到系统实现的完整链条。
+## Why it matters for CitySPS
 
-## 与 CitySPS 的直接关系
+CS336 的价值不在于“学会调用 LLM”，而在于从头理解一个现代 Foundation Model 的完整构建链条：
 
-- Foundation Model 的数据工程与预训练流程
-- Tokenization / representation design（表示设计）
-- Transformer 与现代语言模型基本结构
-- Scaling law（规模扩展规律）
-- Optimization（优化）与训练稳定性
-- Distributed training（分布式训练）
-- Evaluation（评估）
-- 从零训练模型时的系统工程思维
+`data → tokenizer → model → optimization → scaling → distributed training → evaluation`
 
-## 建议关注方式
+这套思路可以直接迁移到 CitySPS 的 Urban Foundation Model、统一编码器与大规模预训练工程。
 
-不需要把它作为固定培训课程完整照搬。负责 Foundation Model、统一编码器、LLM/Agent 基础设施或大规模预训练的成员，可按 CitySPS 当前研发需求选择相关章节。
+## Recommended topics
 
-## 后续补充
+| Topic | Priority | CitySPS connection |
+| --- | --- | --- |
+| Data collection & cleaning | ★★★★★ | 城市多源预训练数据构建与质量控制 |
+| Tokenization / representation | ★★★★★ | Urban token、空间单元、轨迹/流/图的统一表示 |
+| Transformer architecture | ★★★★☆ | Foundation Model backbone |
+| Optimization & training stability | ★★★★★ | 大规模时空预训练 |
+| Scaling laws | ★★★★★ | 数据、模型规模和算力配置 |
+| Systems / distributed training | ★★★★★ | 多 GPU 训练与训练效率 |
+| Evaluation | ★★★★☆ | 泛化、zero-shot / few-shot 与模型能力评估 |
+| Alignment / post-training | ★★★☆☆ | LLM Agent / Planning Agent 阶段更相关 |
 
-- 官方课程主页
-- Lecture / slides
-- Assignments
-- 推荐章节
-- 与 CitySPS 各模块的对应关系
+## How to use
+
+不要求按学期顺序完整学习。更适合作为 CitySPS 开发中的**技术参考课程**：遇到数据、表示、训练、scaling 或 distributed systems 问题时回到对应 lecture / assignment。
