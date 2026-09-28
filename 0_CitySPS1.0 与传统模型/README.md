@@ -4,6 +4,8 @@
 
 **Legend:** ⭐ = Must Read · `[Paper]` = 论文 · `[Code]` = 代码 · `[Project]` = 项目主页 · `[Docs]` = 文档
 
+📊 **[Comparison Matrix](./Comparison%20Matrix.md)** — 比较 UrbanSim、ILUTE、MATSim、SimMobility、QUANT、HARMONY、ActivitySim、POLARIS、BEAM、BISTRO、CityScope 的 state / actor / dynamics / intervention / validation 设计。
+
 ## ⭐ Must Read
 
 | Work | Venue / Year | Why it matters for CitySPS | Resources |
