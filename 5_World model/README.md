@@ -1,8 +1,10 @@
-# 4 · World Models
+# 5 · World Models
 
 > 这一部分关注：**模型如何学习 environment dynamics，并利用 learned world 做 rollout、planning、control 与 counterfactual simulation？** 对 CitySPS 来说，它最终要回答的是“城市在某种行动与外部冲击下会怎样演化”。
 
 **Legend:** ⭐ = Must Read · `[Paper]` = 论文 · `[Code]` = 代码 · `[Project]` = 项目主页 · `[Data]` = 数据/模型
+
+📊 **[Comparison Matrix](./Comparison%20Matrix.md)** — 比较 state、action conditioning、dynamics/output、planning、horizon、uncertainty 与开放资源。
 
 ## ⭐ Foundations: Learned Dynamics in Latent Space
 
