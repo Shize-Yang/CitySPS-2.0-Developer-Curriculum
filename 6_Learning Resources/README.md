@@ -1,19 +1,31 @@
-# 5 · Courses & Learning Resources
+# 6 · Learning Resources
 
-> 课程只作为辅助资源：优先收录能直接帮助理解或实现 CitySPS 关键模块的高质量课程。
+> 这一部分不是“培养课程表”，而是 CitySPS 研发时值得随手调用的**高质量课程 + 小而完整的可读代码项目**。
 
-## Courses
+## Navigation
 
-| Course | Institution | Focus | Links | CitySPS relevance |
-| --- | --- | --- | --- | --- |
-| **CS336 · Language Modeling from Scratch** | Stanford | 从数据、tokenization、Transformer 到训练、scaling、系统与评估 | [Course](https://cs336.stanford.edu/) · [Lectures](https://github.com/stanford-cs336/lectures) · [Notes](./Stanford%20CS336.md) | Foundation Model / LLM infrastructure / large-scale pretraining |
+- 🎓 **[Courses](./Courses.md)** — Stanford CS336、CS224V、CS329Z、Berkeley CS285、Hugging Face Agents Course、Stanford CS25 / CS329X 等。
+- 🛠️ **[Hands-on Projects](./Hands-on%20Projects.md)** — nanobot、MiniMind、nanochat、smolagents 等适合直接读源码和复现的项目。
+- 📝 **[Stanford CS336 Notes](./Stanford%20CS336.md)** — CS336 与 CitySPS Foundation Model 的对应关系。
 
-## What belongs here
+## Quick Start
 
-课程需要满足至少一个条件：
+| Need | Recommended resource |
+| --- | --- |
+| 从零理解现代 Foundation Model 训练 | ⭐ Stanford CS336 + MiniMind / nanochat |
+| 快速理解现代 Agent loop / tools | ⭐ Hugging Face Agents Course + smolagents |
+| 做一个真正可运行的 Agent runtime | ⭐ Stanford CS329Z + nanobot |
+| 研究 Planning / Research Agent | ⭐ Stanford CS224V |
+| World Model → Planning / Control | ⭐ Berkeley CS285 |
+| Human-in-the-loop / alignment / risk | Stanford CS329X |
+| 跟踪 Transformer / AI 前沿 | Stanford CS25 |
 
-- 对 **Foundation Model / World Model / Agent** 的核心方法有系统讲解；
-- 包含高质量 assignment / code，可直接帮助实现 CitySPS 模块；
-- 对 distributed training、model-based RL、complex systems 等底层能力有明显补充。
+## Selection principles
 
-不把一般性的入门课或与 CitySPS 关系较弱的资源堆进来。
+这里只保留满足至少一个条件的资源：
+
+- 能帮助我们理解底层机制，而不只是调用 API；
+- 有高质量 assignments / code / systems，可直接复现；
+- 能对应 Foundation Model、Agent、World Model、Planning / Optimization 中的实际研发模块；
+- 项目核心实现足够可读，适合做 architecture review 或快速原型；
+- 内容具有持续参考价值，而不是一次性的入门教程。
